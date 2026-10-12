@@ -1,0 +1,25 @@
+{
+  "run_id": "aea512bc032c4681a867c3a3ee3328ea",
+  "experiment_id": "1",
+  "all_passed": true,
+  "checks": {
+    "one_successful_project_run": true,
+    "run_id_reused": true,
+    "run_finished": true,
+    "experiment_matches": true,
+    "hyperparameters_match": true,
+    "source_data_protocol_hashes_unchanged": true,
+    "metrics_match_base": true,
+    "prediction_origins_match": true,
+    "predictions_match_base": true,
+    "model_reloaded": true,
+    "project_source_logged": true,
+    "validation_artifacts_logged": true,
+    "execution_tag_set": true
+  },
+  "validation_mae": 77.12967000405226,
+  "model_uri": "models:/m-5ce43dfbff47411ebf358a0afc38bdfd",
+  "original_comparison_group_unchanged": "entrega-final",
+  "failed_launcher_run_id": "2b001431f5fb40de90727d73c9d769b6",
+  "notes": "Initial sandbox launcher failure retained; successful retry produced one run without retraining original experiments."
+}
