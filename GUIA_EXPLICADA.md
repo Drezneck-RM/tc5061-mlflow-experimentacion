@@ -305,3 +305,33 @@ Los resultados anteriores de Ridge o del Random Forest con solo calendario perte
 Este ejercicio permite comparar configuraciones bajo condiciones explícitas y revisar su trazabilidad. Continúan pendientes las fechas completas, la escala física de la demanda, la disponibilidad operativa de otros predictores y los costos de error del negocio.
 
 Con 60 registros, una diferencia pequeña puede depender de unas pocas observaciones. Más árboles, más combinaciones o más ejecuciones no sustituyen más información independiente. Antes de desplegar un modelo, convendría obtener historia adicional verificable, evaluar el procedimiento en observaciones nuevas y definir criterios de aceptación y monitoreo. Un resultado que no supera al Dummy también es una conclusión útil cuando está correctamente medido y documentado.
+
+## 16. Ejecutar con MLflow Projects como en los ejemplos de clase
+
+**Tracking** conserva y compara lo que ocurrió en una ejecución. **Projects** describe cómo iniciarla: comando, parámetros y entorno. Se añadieron `MLproject`, `python_env.yaml` y un adaptador pequeño en `scripts/train_project.py` para ofrecer esa segunda interfaz sin duplicar el entrenamiento.
+
+Desde la raíz del repositorio, después de crear `.venv` e instalar `requirements.txt` siguiendo el apartado 3:
+
+```powershell
+$projectPython = (Resolve-Path ".venv\Scripts\python.exe").Path
+$env:PATH = (Split-Path $projectPython) + [IO.Path]::PathSeparator + $env:PATH
+$env:MLFLOW_TRACKING_URI = 'sqlite:///' + ((Join-Path (Get-Location) 'mlruns.sqlite') -replace '\\', '/')
+$env:MLFLOW_EXPERIMENT_NAME = 'TC5061_Experimentacion_CLI_Demanda'
+& $projectPython -m mlflow run . --env-manager local -P n_estimators=100 -P max_depth=1 -P min_samples_leaf=2 -P seed=42
+```
+
+`-P max_depth=1` elige el mismo hiperparámetro que `train.py --max-depth 1`. En Projects se usan los nombres declarados en `MLproject`, con guion bajo. Para otra configuración, cambia esos valores y ejecuta otra vez: se crea una corrida nueva.
+
+`--env-manager local` utiliza el entorno ya instalado. El cambio de `PATH` asegura que el subproceso encuentre ese Python, incluso cuando no has activado el entorno virtual. La variable `MLFLOW_TRACKING_URI` señala la misma base de datos que consulta `scripts/start_mlflow.py`; el nombre del experimento agrupa estas ejecuciones con las anteriores. El descriptor `python_env.yaml` declara Python 3.13.7 y reutiliza `requirements.txt`; la creación automática de un entorno nuevo no fue parte de la prueba realizada.
+
+Projects abre una corrida antes de invocar el script. El adaptador consulta su almacén y experimento y hace que `train.main` reanude ese mismo identificador. Los archivos del descriptor y del adaptador se registran en `project_source/`. La lógica central, las variables históricas y el protocolo de evaluación siguen siendo los mismos.
+
+La ejecución real de verificación reutilizó correctamente una sola corrida, conservó las 24 predicciones de la base y obtuvo MAE 77.12967000405226. Pasaron las 13 comprobaciones de integración y las 10 pruebas actuales: seis del pronóstico y cuatro del contrato de Projects. La evidencia está en [mlproject_verification.json](docs/results/mlproject_verification.json).
+
+Esta comprobación es adicional a la comparación original de la entrega. Para verla en la interfaz, elimina el filtro `entrega-final` y utiliza:
+
+```text
+tags.execution_interface = 'mlflow_projects'
+```
+
+La [revisión de estructura y buenas prácticas](docs/REVISION_BUENAS_PRACTICAS.md) explica la correspondencia con los ejemplos proporcionados y las decisiones que requieren adaptación a datos temporales.
