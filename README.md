@@ -1,4 +1,4 @@
-# Experimentación reproducible de demanda con MLflow
+# Experimentación MLflow
 
 Proyecto de TC5061 de **Saul Salgado Ortega**. Materia: **Operaciones de aprendizaje automático (Gpo 10)**. Período: **Trimestral Sep - Dic de 2026**. Actividad Individual | Código de experimentación base con MLFlow.
 
