@@ -1,0 +1,7 @@
+# Conservar los bytes que respaldan los hashes registrados en MLflow.
+* text=auto eol=lf
+*.py -text
+*.txt -text
+*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+*.pdf binary
+*.png binary

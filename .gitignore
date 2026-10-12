@@ -1,0 +1,24 @@
+# Entornos y caches locales
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Almacén MLflow, modelos y resultados regenerables
+mlruns.sqlite*
+mlflow.db*
+mlruns/
+artifacts/
+/results/
+*.log
+
+# Credenciales y configuración privada
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+Thumbs.db
