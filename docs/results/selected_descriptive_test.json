@@ -1,0 +1,38 @@
+{
+  "evaluate_test": true,
+  "experiment_id": "1",
+  "experiment_name": "TC5061_Experimentacion_CLI_Demanda",
+  "hashes": {
+    "dataset_sha256": "ae8c1fb02265e02bff9d6b3c6c708e490815f0b6980f438945b10dbc7391af12",
+    "model_source_sha256": "c626d9d882c9998fba7a88b1b909c532bcf1a47554eb6316a31b61cb61792a55",
+    "protocol_sha256": "cc01b9f7305f970a815e8a61b1ac7542e9bf9f692f67229bc5143045ba4c1aba"
+  },
+  "metrics": {
+    "descriptive_test_dummy_mae": 50.13090099149141,
+    "descriptive_test_mae": 52.92438865195317,
+    "descriptive_test_mean_signed_error": 13.796634130505945,
+    "descriptive_test_n_predictions": 12,
+    "descriptive_test_r2": -0.0698984328202592,
+    "descriptive_test_rmse": 62.316890075424126,
+    "descriptive_test_skill_vs_dummy": -0.055723867020381235,
+    "validation_dummy_mae": 74.38841025718328,
+    "validation_mae": 65.84442372952361,
+    "validation_mean_signed_error": -1.8893696433836051,
+    "validation_n_predictions": 24,
+    "validation_r2": 0.15613233216606437,
+    "validation_rmse": 93.91179710100005,
+    "validation_skill_vs_dummy": 0.11485642048432698
+  },
+  "model_reloaded": true,
+  "model_uri": "models:/m-04f1f2e230c24eb1ac256f3e8cb6778d",
+  "origin48_prediction": 281.4683580354457,
+  "params": {
+    "max_depth": 1,
+    "min_samples_leaf": 2,
+    "n_estimators": 100,
+    "seed": 42
+  },
+  "run_id": "7fa0f43edf3b4256bfab4ca9b40d6bb1",
+  "run_name": "depth_1_descriptive_test",
+  "snapshot_train_end_row": 48
+}

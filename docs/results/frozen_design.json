@@ -1,0 +1,51 @@
+{
+  "changing_one_parameter_at_a_time": true,
+  "configurations": [
+    {
+      "max_depth": 3,
+      "min_samples_leaf": 2,
+      "n_estimators": 100,
+      "name": "base",
+      "seed": 42
+    },
+    {
+      "max_depth": 3,
+      "min_samples_leaf": 2,
+      "n_estimators": 300,
+      "name": "trees_300",
+      "seed": 42
+    },
+    {
+      "max_depth": 1,
+      "min_samples_leaf": 2,
+      "n_estimators": 100,
+      "name": "depth_1",
+      "seed": 42
+    },
+    {
+      "max_depth": 6,
+      "min_samples_leaf": 2,
+      "n_estimators": 100,
+      "name": "depth_6",
+      "seed": 42
+    },
+    {
+      "max_depth": 3,
+      "min_samples_leaf": 1,
+      "n_estimators": 100,
+      "name": "leaf_1",
+      "seed": 42
+    },
+    {
+      "max_depth": 3,
+      "min_samples_leaf": 4,
+      "n_estimators": 100,
+      "name": "leaf_4",
+      "seed": 42
+    }
+  ],
+  "interactions_evaluated": false,
+  "reproducibility_run": "base_repeat",
+  "selection": "minimum_validation_mae_ties_follow_list_order",
+  "test_used_for_selection": false
+}

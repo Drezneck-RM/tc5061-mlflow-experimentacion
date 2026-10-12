@@ -1,0 +1,31 @@
+{
+  "evaluate_test": false,
+  "experiment_id": "1",
+  "experiment_name": "TC5061_Experimentacion_CLI_Demanda",
+  "hashes": {
+    "dataset_sha256": "ae8c1fb02265e02bff9d6b3c6c708e490815f0b6980f438945b10dbc7391af12",
+    "model_source_sha256": "c626d9d882c9998fba7a88b1b909c532bcf1a47554eb6316a31b61cb61792a55",
+    "protocol_sha256": "cc01b9f7305f970a815e8a61b1ac7542e9bf9f692f67229bc5143045ba4c1aba"
+  },
+  "metrics": {
+    "validation_dummy_mae": 74.38841025718328,
+    "validation_mae": 65.84442372952361,
+    "validation_mean_signed_error": -1.8893696433836051,
+    "validation_n_predictions": 24,
+    "validation_r2": 0.15613233216606437,
+    "validation_rmse": 93.91179710100005,
+    "validation_skill_vs_dummy": 0.11485642048432698
+  },
+  "model_reloaded": true,
+  "model_uri": "models:/m-2960a42a41474533a6d36184322f8a66",
+  "origin48_prediction": 281.4683580354457,
+  "params": {
+    "max_depth": 1,
+    "min_samples_leaf": 2,
+    "n_estimators": 100,
+    "seed": 42
+  },
+  "run_id": "613f6c1c9395459391b7a27914d4de64",
+  "run_name": "depth_1",
+  "snapshot_train_end_row": 48
+}

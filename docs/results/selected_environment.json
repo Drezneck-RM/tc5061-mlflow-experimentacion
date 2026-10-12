@@ -1,0 +1,17 @@
+{
+  "packages": {
+    "ipykernel": "7.4.0",
+    "matplotlib": "3.11.2",
+    "mlflow": "3.16.1",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "seaborn": "0.13.2",
+    "skops": "0.16.0",
+    "ucimlrepo": "0.0.7"
+  },
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.13.7"
+}

@@ -1,0 +1,6 @@
+{
+  "requirements.txt": "24849ec57a1ba132fbf27ccd7a5c5181d14b7d60d7c93f88c16ff4a899703704",
+  "src/demand_forecasting/__init__.py": "2a1063bb1e195d64e87d99d110ff02d0613397945a64866d46423f189466abcd",
+  "src/demand_forecasting/forecasting.py": "9557217d2633a5173c017d91f2193e9345e2d9f694c288256fe2d2e6a77e9d8b",
+  "train.py": "d641b4282ca8035da05c9e02b14984bda424ddc785b8787ab5d899e39486f7c5"
+}
